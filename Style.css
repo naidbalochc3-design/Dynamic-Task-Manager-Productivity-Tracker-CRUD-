@@ -1,0 +1,271 @@
+/* ========================================== */
+/* [APNI CUSTOM CHEEZ YAHAN DALEN]: Color Theme Customization */
+/* ========================================== */
+:root {
+    --primary-color: #2dd4bf;
+    --primary-hover: #14b8a6;
+    --bg-color: #101820;
+    --card-bg: #1a2732;
+    --text-color: #e8eef2;
+    --text-light: #9aabb7;
+    --border-color: #30414d;
+    --danger-color: #f87171;
+    --success-color: #34d399;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: radial-gradient(ellipse at top, #1b2b36 0%, var(--bg-color) 58%);
+    color: var(--text-color);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #2b3b46;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+    height: fit-content;
+}
+
+.app-header {
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.app-header h1 {
+    font-size: 24px;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.app-header p {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-top: 5px;
+}
+
+/* Developer Tag Styling */
+.developer-tag {
+    font-size: 12px;
+    color: var(--primary-color);
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+/* Input Form Section */
+.task-form {
+    display: grid;
+    grid-template-columns: 1fr 140px 140px auto;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 650px) {
+    .task-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+.task-input, .task-select, .task-date {
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--text-color);
+    background-color: #111c25;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.task-input::placeholder {
+    color: #738592;
+}
+
+.task-input:focus, .task-select:focus, .task-date:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.14);
+}
+
+.task-select option {
+    color: var(--text-color);
+    background-color: #111c25;
+}
+
+.add-btn {
+    background-color: var(--primary-color);
+    color: #10201f;
+    border: none;
+    padding: 0 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.add-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Filter Controls */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: all 0.2s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background-color: var(--primary-color);
+    color: #10201f;
+    border-color: var(--primary-color);
+}
+
+.task-stats {
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+/* Task List Container */
+.task-list {
+    list-style: none;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #202f3a;
+    border: 1px solid var(--border-color);
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.task-item:hover {
+    background-color: #243640;
+    border-color: #405560;
+    transform: translateY(-1px);
+}
+
+.task-item.completed {
+    background-color: #19262f;
+    border-color: #2a3b45;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: var(--text-light);
+}
+
+.task-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.task-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+}
+
+.task-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.task-text {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.task-meta {
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.badge {
+    background-color: rgba(45, 212, 191, 0.12);
+    color: #70e2d2;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.task-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 6px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.delete-btn {
+    color: var(--danger-color);
+}
+
+.delete-btn:hover {
+    background-color: rgba(248, 113, 113, 0.14);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-light);
+    font-size: 14px;
+}

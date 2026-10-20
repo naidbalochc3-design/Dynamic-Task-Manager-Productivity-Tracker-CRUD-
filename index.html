@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Task Manager & Productivity Tracker</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- ========================================== -->
+        <!-- [APNI CUSTOM CHEEZ YAHAN DALEN]: App Header & Branding -->
+        <!-- ========================================== -->
+        <header class="app-header">
+            <h1><i class="fa-solid fa-list-check"></i> Dynamic Task Manager</h1>
+            <p>Built with Productivity Tracking & localStorage Persistence</p>
+            <!-- Aap yahan apna naam ya brand name likh sakte hain -->
+            <p class="developer-tag">Developed by: Muhammad Zaid</p>
+        </header>
+
+        <!-- Input Form -->
+        <form class="task-form" id="taskForm">
+            <input type="text" id="taskInput" class="task-input" placeholder="Enter a new task..." required>
+
+            <!-- ========================================== -->
+            <!-- [APNI CUSTOM CHEEZ YAHAN DALEN]: Task Categories -->
+            <!-- ========================================== -->
+            <select id="taskCategory" class="task-select">
+                <option value="Work">Work</option>
+                <option value="Personal">Personal</option>
+                <option value="Study">Study</option>
+                <option value="Health">Health</option>
+                <!-- Agar aur categories dalni hon toh yahan add karein -->
+            </select>
+
+            <input type="date" id="taskDate" class="task-date" required>
+            <button type="submit" class="add-btn"><i class="fa-solid fa-plus"></i> Add</button>
+        </form>
+
+        <!-- Controls / Filters -->
+        <div class="controls">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+            <div class="task-stats" id="taskStats">0 tasks remaining</div>
+        </div>
+
+        <!-- Task List -->
+        <ul class="task-list" id="taskList">
+            <!-- Dynamically populated tasks -->
+        </ul>
+    </div>
+
+    <!-- External JavaScript Link -->
+    <script src="Script.js"></script>
+</body>
+
+</html>
